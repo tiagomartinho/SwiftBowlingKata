@@ -2,20 +2,23 @@ import XCTest
 @testable import BowlingKata
 
 class BowlingKataTests: XCTestCase {
-    func testNoPinsGame() {
-        let bowling = Bowling()
-        for _ in 1...20 {
-            bowling.roll(0)
+
+    let bowling = Bowling()
+
+    private func rollPins(pins:Int, times:Int){
+        for _ in 1...times {
+            bowling.roll(pins)
         }
-        XCTAssertEqual(0, bowling.score())
+    }
+    
+    func testNoPinsGame() {
+        rollPins(0,times:20)
+        XCTAssertEqual(0, bowling.score)
     }
     
     func testOnePinGame() {
-        let bowling = Bowling()
         bowling.roll(1)
-        for _ in 1...19 {
-            bowling.roll(0)
-        }
-        XCTAssertEqual(1, bowling.score())
+        rollPins(0,times:19)
+        XCTAssertEqual(1, bowling.score)
     }
 }
