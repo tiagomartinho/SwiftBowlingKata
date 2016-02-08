@@ -1,8 +1,8 @@
 class Bowling {
-    func roll(pins:Int){
-    }
     
-    func score()->Int{
-        return 0
+    var score = 0
+    
+    func roll(pins:Int){
+        score += pins
     }
 }
