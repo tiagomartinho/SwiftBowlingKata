@@ -2,14 +2,14 @@ import XCTest
 @testable import BowlingKata
 
 class BowlingKataTests: XCTestCase {
+    let bowling = Bowling()
+
     func testNoPinsGame() {
-        let bowling = Bowling()
         bowling.rollPins(0, times: 20)
         XCTAssertEqual(0, bowling.score)
     }
     
     func testOnePinGame() {
-        let bowling = Bowling()
         bowling.rollPins(1, times: 20)
         XCTAssertEqual(20, bowling.score)
     }
