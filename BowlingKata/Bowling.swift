@@ -1,14 +1,19 @@
 class Bowling {
     
     var score:Int {
-        return rolls.reduce(0, combine: +)
+        return rolls.reduce(0) { $0 + $1.score }
     }
     
     private var currentRoll = 0
-    private var rolls = [Int](count: 20, repeatedValue: 0)
+    private var rolls = [Frame](count: 10, repeatedValue: Frame())
     
     func roll(pins:Int){
-        rolls[currentRoll] = pins
+        if currentRoll % 2 == 0 {
+            rolls[currentRoll/2].firstRoll = pins
+        }
+        else {
+            rolls[currentRoll/2].secondRoll = pins
+        }
         currentRoll += 1
     }
 }
