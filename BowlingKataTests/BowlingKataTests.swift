@@ -13,6 +13,13 @@ class BowlingKataTests: XCTestCase {
         bowling.rollPins(1, times: 20)
         XCTAssertEqual(20, bowling.score)
     }
+    
+    func testSpareGame() {
+        bowling.rollSpare()
+        bowling.roll(5)
+        bowling.rollPins(0, times: 17)
+        XCTAssertEqual(20, bowling.score)
+    }
 }
 
 extension Bowling {
@@ -20,5 +27,10 @@ extension Bowling {
         for _ in 1...times {
             self.roll(pins)
         }
+    }
+    
+    func rollSpare(){
+        self.roll(3)
+        self.roll(7)
     }
 }
