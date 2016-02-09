@@ -6,10 +6,9 @@ class Bowling {
         for frame in frames {
             if previousSpare {
                 score += frame.firstRoll
-                previousSpare = false
             }
             score += frame.score
-            previousSpare = (frame.score == 10)
+            previousSpare = frame.isSpare
         }
         return score
     }

@@ -4,4 +4,7 @@ struct Frame {
     var score:Int {
         return firstRoll + secondRoll
     }
+    var isSpare:Bool {
+        return firstRoll + secondRoll == 10
+    }
 }
