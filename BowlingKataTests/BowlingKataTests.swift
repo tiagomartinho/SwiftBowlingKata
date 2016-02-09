@@ -20,6 +20,14 @@ class BowlingKataTests: XCTestCase {
         bowling.rollPins(0, times: 17)
         XCTAssertEqual(20, bowling.score)
     }
+    
+    func testStrikeGame() {
+        bowling.rollStrike()
+        bowling.roll(5)
+        bowling.roll(4)
+        bowling.rollPins(0, times: 16)
+        XCTAssertEqual(28, bowling.score)
+    }
 }
 
 extension Bowling {
@@ -32,5 +40,9 @@ extension Bowling {
     func rollSpare(){
         self.roll(3)
         self.roll(7)
+    }
+    
+    func rollStrike(){
+        self.roll(10)
     }
 }
