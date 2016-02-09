@@ -19,6 +19,9 @@ class Bowling {
     func roll(pins:Int){
         if currentRoll % 2 == 0 {
             frames[currentRoll/2].firstRoll = pins
+            if pins == 10 {
+                currentRoll += 1
+            }
         }
         else {
             frames[currentRoll/2].secondRoll = pins
