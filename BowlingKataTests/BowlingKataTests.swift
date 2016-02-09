@@ -9,4 +9,12 @@ class BowlingKataTests: XCTestCase {
         }
         XCTAssertEqual(0, bowling.score)
     }
+    
+    func testOnePinGame() {
+        let bowling = Bowling()
+        for _ in 1...20 {
+            bowling.roll(1)
+        }
+        XCTAssertEqual(20, bowling.score)
+    }
 }
