@@ -3,6 +3,6 @@ class Bowling {
     }
     
     func score()->Int{
-        return 0
+        return -1
     }
 }

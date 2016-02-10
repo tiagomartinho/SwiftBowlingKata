@@ -3,8 +3,5 @@ import XCTest
 
 class BowlingKataTests: XCTestCase {
     func testExample() {
-        let bowling = Bowling()
-        bowling.roll(0)
-        XCTAssertEqual(0, bowling.score())
     }
 }
