@@ -17,7 +17,7 @@ class Bowling {
         return score
     }
     
-    private var frames = [Frame](count: 10, repeatedValue: Frame())
+    private var frames = [Frame](count: 13, repeatedValue: Frame())
     private var currentRoll = 0
     
     func roll(pins:Int){
