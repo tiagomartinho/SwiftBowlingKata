@@ -1,8 +1,12 @@
 class Bowling {
+    
+    private var knockedPins = 0
+    
     var score:Int{
-        return 0
+        return knockedPins
     }
     
     func roll(pins:Int){
+        knockedPins += pins
     }
 }
