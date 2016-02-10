@@ -7,6 +7,6 @@ class BowlingKataTests: XCTestCase {
         for _ in 1...20 {
             game.roll(0)
         }
-        XCTAssertEqual(0, game.score())
+        XCTAssertEqual(0, game.score)
     }
 }
