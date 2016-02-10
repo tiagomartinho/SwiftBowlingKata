@@ -3,7 +3,7 @@ import XCTest
 
 class BowlingKataTests: XCTestCase {
     let game = Bowling()
-
+    
     func testEmptyGame() {
         game.roll(0, times: 20)
         XCTAssertEqual(0, game.score)
@@ -15,15 +15,14 @@ class BowlingKataTests: XCTestCase {
     }
     
     func testSpareGame() {
-        game.roll(3)
-        game.roll(7)
+        game.rollSpare()
         game.roll(4)
         game.roll(0, times: 17)
         XCTAssertEqual(18, game.score)
     }
     
     func testStrikeGame() {
-        game.roll(10)
+        game.rollStrike()
         game.roll(4)
         game.roll(3)
         game.roll(0, times: 16)
@@ -36,5 +35,14 @@ extension Bowling {
         for _ in 1...times {
             self.roll(pins)
         }
+    }
+    
+    func rollSpare(){
+        self.roll(3)
+        self.roll(7)
+    }
+    
+    func rollStrike(){
+        self.roll(10)
     }
 }
