@@ -21,6 +21,14 @@ class BowlingKataTests: XCTestCase {
         game.roll(0, times: 17)
         XCTAssertEqual(18, game.score)
     }
+    
+    func testStrikeGame() {
+        game.roll(10)
+        game.roll(4)
+        game.roll(3)
+        game.roll(0, times: 18)
+        XCTAssertEqual(24, game.score)
+    }
 }
 
 extension Bowling {
