@@ -2,12 +2,17 @@ class Bowling {
     var score:Int{
         var score = 0
         var previousSpare = false
+        var previousStrike = false
         for frame in frames {
             if previousSpare {
                 score += frame.firstRoll
             }
+            if previousStrike {
+                score += frame.score
+            }
             score += frame.score
             previousSpare = frame.isSpare
+            previousStrike = frame.isStrike
         }
         return score
     }
