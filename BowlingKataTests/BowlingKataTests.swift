@@ -31,10 +31,14 @@ class BowlingKataTests: XCTestCase {
     
     func testStrikeAtTheEndGame() {
         game.roll(0, times: 18)
-        game.rollStrike()
+        game.rollSpare()
         game.roll(4)
-        game.roll(3)
-        XCTAssertEqual(24, game.score)
+        XCTAssertEqual(18, game.score)
+    }
+    
+    func testPerfectGame() {
+        game.roll(20, times: 12)
+        XCTAssertEqual(300, game.score)
     }
 }
 
