@@ -1,6 +1,10 @@
 class Bowling {
     var score:Int{
-        return knockedPins
+        var score = 0
+        for frame in frames {
+            score += frame.score
+        }
+        return score
     }
     
     private var knockedPins = 0
