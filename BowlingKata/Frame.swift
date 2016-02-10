@@ -5,6 +5,9 @@ struct Frame {
         return firstRoll + secondRoll
     }
     var isSpare:Bool{
-        return firstRoll + secondRoll == 10
+        return firstRoll + secondRoll == 10 && !isStrike
+    }
+    var isStrike:Bool{
+        return firstRoll == 10
     }
 }
